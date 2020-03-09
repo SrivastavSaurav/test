@@ -1,0 +1,29 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "RDP",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "3389"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "S061-NOE-subnet"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/3a11fa3f-8ecb-4fd6-9f79-bc8f8bc28e71/resourceGroups/S061-NOE-network/providers/Microsoft.Network/virtualNetworks/S061-NOE-vnet"
+        }
+    }
+}
